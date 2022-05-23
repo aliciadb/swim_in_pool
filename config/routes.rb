@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pools#index"
+
+  resources :pools, except: [:index] do
+    resources :bookings, only: [:new, :create]
+  end
   # root "articles#index"
 end
