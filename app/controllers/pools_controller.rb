@@ -3,4 +3,9 @@ class PoolsController < ApplicationController
 
   def index
   end
+
+  def edit
+    authorize @pool
+    @pool = Pool.find(params[:id])
+  end
 end
