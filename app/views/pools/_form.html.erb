@@ -1,17 +1,10 @@
-<div class="container">
-<<<<<<< HEAD
-  <h2>add new pool</h2>
+
   <%= simple_form_for @pool do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :location %>
     <%= f.input :category, collection: Pool::CATEGORIES %>
-    <%= f.input :photo, as: :file %>
+    <%# image %>
     <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
-=======
-  <h2>Add a new pool</h2>
-  <%= render "form" %>
->>>>>>> master
-</div>
