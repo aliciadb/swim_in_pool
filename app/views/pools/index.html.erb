@@ -1,1 +1,11 @@
 <h1>All pools</h1>
+
+<div class="container">
+  <% @pools.each do |pool| %>
+    <div class="card">
+      <h5><%= pool.name %></h5>
+      <img src="<% pool.image %>" alt="Pool image">
+
+    </div>
+  <% end %>
+</div>
