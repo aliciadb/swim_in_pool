@@ -9,7 +9,12 @@ class PoolPolicy < ApplicationPolicy
     # end
   end
 
+<<<<<<< HEAD
   def resolve
     scope.all
+=======
+  def edit
+    @record.user == @user
+>>>>>>> ef901722734dc813aedd7c16ceea7e964ffe9c92
   end
 end
