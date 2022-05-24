@@ -7,6 +7,8 @@ class PoolsController < ApplicationController
   def edit
     authorize @pool
     @pool = Pool.find(params[:id])
+  end
+
   def new
     @pool = Pool.new
     authorize @pool
