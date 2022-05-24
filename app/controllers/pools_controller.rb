@@ -25,6 +25,12 @@ class PoolsController < ApplicationController
     @pool = Pool.find(params[:id])
   end
 
+  def destroy
+    @pool = Pool.find(params[:id])
+    @pool.destroy
+    redirect_to pools_path, status: :see_other
+  end
+
   private
 
   def pool_params
