@@ -6,6 +6,11 @@ class PoolsController < ApplicationController
     @pools = Pool.all
   end
 
+  def show
+    @pool = Pool.find(params[:id])
+    authorize @pool
+  end
+
   def new
     @pool = Pool.new
     authorize @pool
@@ -23,13 +28,13 @@ class PoolsController < ApplicationController
   end
 
   def edit
-    authorize @pool
     @pool = Pool.find(params[:id])
+    authorize @pool
   end
 
   def update
-    authorize @pool
     @pool = Pool.find(params[:id])
+    authorize @pool
     @pool.update(pool_params)
     redirect_to pool_path(@pool)
   end
