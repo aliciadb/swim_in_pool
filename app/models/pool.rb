@@ -1,6 +1,8 @@
 class Pool < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
+  # has_many_attached :photos
 
   CATEGORIES = %w[jacuzzi olympic slides wavepool indoor outdoor natural infinity lap heated salty kids\ friendly]
 
