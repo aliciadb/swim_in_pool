@@ -1,11 +1,21 @@
-<h1>All pools</h1>
-
 <div class="container">
-  <% @pools.each do |pool| %>
-    <div class="card">
-      <h5><%= pool.name %></h5>
-      <img src="<% pool.image %>" alt="Pool image">
 
+  <h1>All pools</h1>
+  <% @pools.each do |pool| %>
+    <div class="card mb-3">
+      <img src="<%= pool.image %>" alt="Pool image">
+      <div class="d-flex p-4 justify-content-between">
+        <div>
+          <p><%= pool.category %></p>
+          <h5><%= pool.name %></h5>
+          <p><%= pool.location %></p>
+        </div>
+        <div>
+          <p><%= pool.rating %></p>
+          <p><%= pool.price %></p>
+        </div>
+      </div>
     </div>
   <% end %>
+
 </div>
