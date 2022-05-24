@@ -56,7 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_121153) do
 
   create_table "pools", force: :cascade do |t|
     t.string "name"
-    t.integer "rating"
     t.text "description"
     t.float "price"
     t.string "location"
@@ -65,6 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_24_121153) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rating", default: 0, null: false
     t.index ["user_id"], name: "index_pools_on_user_id"
   end
 
