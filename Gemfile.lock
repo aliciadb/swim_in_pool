@@ -260,11 +260,7 @@ GEM
 PLATFORMS
   arm64-darwin-20
   x86_64-darwin-19
-<<<<<<< HEAD
   x86_64-darwin-21
-=======
-  x86_64-darwin-20
->>>>>>> 2b8efa79f852219d2aa9be551c56dd064a5971a7
 
 DEPENDENCIES
   autoprefixer-rails
