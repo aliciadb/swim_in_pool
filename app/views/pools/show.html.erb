@@ -3,6 +3,10 @@
     <% if @pool.photo.attached? %>
       <%= cl_image_tag @pool.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
-  <%= link_to 'Edit', edit_pool_path(@pool), class: 'btn btn-primary' %>
-  <%= link_to "Back to all pools", root_path, class: 'btn btn-primary' %>
+    <div class="d-flex gap-2">
+      <%= link_to 'Edit', edit_pool_path(@pool), class: 'btn btn-primary' %>
+      <%= link_to "Back to all pools", root_path, class: 'btn btn-primary' %>
+      <%#= link_to "Delete this pool", delete_pool_path(@pool), data: { turbo_method: :delete }, class: 'btn btn-primary' %>
+      <%= button_to "Delete this pool", delete_pool_path(@pool), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+    </div>
 </div>
