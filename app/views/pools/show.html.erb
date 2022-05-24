@@ -1,8 +1,19 @@
+<% if @pool.photo.attached? %>
+  <%= cl_image_tag @pool.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="banner mb-5" style="background-image: url('<%= cl_image_tag @pool.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
+<% else %>
+  <div class="banner mb-5" style="background-image: url('https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992')"></div>
+<% end %>
 <div class="container">
-  <h1><%= @pool.name %></h1>
-    <% if @pool.photo.attached? %>
-      <%= cl_image_tag @pool.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  <%= link_to 'Edit', edit_pool_path(@pool), class: 'btn btn-primary' %>
-  <%= link_to "Back to all pools", root_path, class: 'btn btn-primary' %>
+  <div class="d-flex justify-content-between">
+    <div>
+      <%= link_to "< Back to all pools", root_path %>
+      <span> | </span>
+      <%= link_to 'Edit', edit_pool_path(@pool) %>
+      <h1><%= @pool.name %></h1>
+      <p><%= @pool.description %></p>
+    </div>
+    <div class="book-pool">
+    </div>
+  </div>
 </div>

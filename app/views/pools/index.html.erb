@@ -1,26 +1,25 @@
 <div class="container">
-  <h1 class="pt-4 pb-3">All pools</h1>
-  <%= link_to "Add a new pool", new_pool_path, class: 'btn btn-primary' %>
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="pt-4 pb-3">All pools</h1>
+    <%= link_to "+ Add a new pool", new_pool_path, class: 'btn btn-primary' %>
+  </div>
   <div class="cards-container d-flex justify-content-between flex-wrap">
-  <br>
-  <br>
-  <div class="d-flex">
-      <% @pools.each do |pool| %>
-      <div class="pool_card mb-3">
+  <% @pools.each do |pool| %>
+      <div class="pool-card mb-3">
         <% if pool.photo.attached? %>
           <%= cl_image_tag pool.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <img src="https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992" alt="Pool photo" height=200>
         <% end %>
-        <div class="d-flex p-4 justify-content-between">
-          <div class="details">
+        <div class="p-4">
+          <div>
             <p class="category"><%= pool.category %></p>
-            <h5><%= link_to pool.name, pool_path(pool) %></h5>
-            <p><%= pool.location %></p>
+            <h4><%= link_to pool.name, pool_path(pool) %></h4>
           </div>
-          <div class="price">
-            <p><%= pool.rating %></p>
-            <p><%= pool.price %></p>
+          <div class="details d-flex justify-content-between">
+            <p><%= pool.location %></p>
+            <p><i class="fa-solid fa-star"></i> <%= pool.rating %></i></p>
+            <p class="price"><strong><%= pool.price %> €</strong></p>
           </div>
         </div>
       </div>
