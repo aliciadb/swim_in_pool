@@ -1,5 +1,8 @@
 <div class="container">
   <h1>All pools</h1>
+  <%= link_to "Add a new pool", new_pool_path, class: 'btn btn-primary' %>
+  <br>
+  <br>
   <div class="d-flex">
       <% @pools.each do |pool| %>
       <div class="pool_card mb-3 justify-content-between">
