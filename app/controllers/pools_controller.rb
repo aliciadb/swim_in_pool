@@ -20,6 +20,11 @@ class PoolsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @pool
+    @pool = Pool.find(params[:id])
+  end
+
   private
 
   def pool_params
