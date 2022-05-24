@@ -1,0 +1,8 @@
+<div class="container">
+  <h1><%= @pool.name %></h1>
+    <% if @pool.photo.attached? %>
+      <%= cl_image_tag @pool.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+  <%= link_to 'Edit', edit_pool_path(@pool), class: 'btn btn-primary' %>
+  <%= link_to "Back to all pools", root_path, class: 'btn btn-primary' %>
+</div>

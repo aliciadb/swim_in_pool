@@ -9,7 +9,19 @@ class PoolPolicy < ApplicationPolicy
     # end
   end
 
-  def edit
+  def show?
+    true
+  end
+
+  def resolve
+    scope.all
+  end
+
+  def edit?
+    @record.user == @user
+  end
+
+  def update?
     @record.user == @user
   end
 end
