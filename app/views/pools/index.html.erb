@@ -1,6 +1,10 @@
 <div class="container">
   <h1 class="pt-4 pb-3">All pools</h1>
+  <%= link_to "Add a new pool", new_pool_path, class: 'btn btn-primary' %>
   <div class="cards-container d-flex justify-content-between flex-wrap">
+  <br>
+  <br>
+  <div class="d-flex">
       <% @pools.each do |pool| %>
       <div class="pool_card mb-3">
         <% if pool.photo.attached? %>
