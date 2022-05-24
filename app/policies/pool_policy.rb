@@ -14,6 +14,11 @@ class PoolPolicy < ApplicationPolicy
   end
 
   def edit
+  def edit?
+    @record.user == @user
+  end
+
+  def update?
     @record.user == @user
   end
 end

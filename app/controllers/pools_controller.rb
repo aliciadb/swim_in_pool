@@ -27,6 +27,13 @@ class PoolsController < ApplicationController
     @pool = Pool.find(params[:id])
   end
 
+  def update
+    authorize @pool
+    @pool = Pool.find(params[:id])
+    @pool.update(pool_params)
+    redirect_to pool_path(@pool)
+  end
+
   private
 
   def pool_params
