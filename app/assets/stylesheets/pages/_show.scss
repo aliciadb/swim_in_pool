@@ -1,0 +1,15 @@
+.banner {
+  width: 100%;
+  height: 60vh;
+  background-position: 0 60%;
+  background-size: cover;
+}
+
+.book-pool {
+  background-color: rgb(215, 215, 215);
+  grid-column: 3 / span 1;
+  height: 400px;
+  width: 500px;
+  border-radius: 20px;
+  margin-left: 20px;
+}
