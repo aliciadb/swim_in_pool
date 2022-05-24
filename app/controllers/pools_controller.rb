@@ -4,11 +4,6 @@ class PoolsController < ApplicationController
   def index
   end
 
-  def edit
-    authorize @pool
-    @pool = Pool.find(params[:id])
-  end
-
   def new
     @pool = Pool.new
     authorize @pool
@@ -23,6 +18,11 @@ class PoolsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    authorize @pool
+    @pool = Pool.find(params[:id])
   end
 
   private
