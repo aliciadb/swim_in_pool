@@ -10,6 +10,5 @@ class Pool < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :location, presence: true
-  validates :image, presence: true
   validates :category, inclusion: { in: CATEGORIES }
 end
