@@ -14,9 +14,18 @@
       <% end %>
       <h1><%= @pool.name %></h1>
       <p><%= @pool.description %></p>
+      <% if policy(@pool).destroy? %>
       <%= button_to "Delete this pool", delete_pool_path(@pool), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
+      <% end %>
     </div>
     <div class="book-pool">
+      <h3>Book this pool</h3>
+
+      <%= simple_form_for [@pool, @booking] do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
     </div>
   </div>
 </div>
