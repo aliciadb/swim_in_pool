@@ -15,11 +15,11 @@
               </div>
               <%= button_to "X", delete_pool_path(pool), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-dark btn-sm' %>
             </div>
-            <div class="details d-flex justify-content-between">
-              <p><%= pool.location %></p>
-              <p><i class="fa-solid fa-star"></i> <%= pool.rating %></i></p>
-              <p class="price"><strong><%= pool.price %> €</strong></p>
-            </div>
+            <ul class="details d-flex justify-content-between">
+              <li><%= pool.location %></li>
+              <li><i class="fa-solid fa-star"></i> <%= pool.rating %></i></li>
+              <li class="price"><strong><%= pool.price %> €</strong></li>
+            </ul>
           </div>
         </div>
       <% end %>
