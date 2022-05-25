@@ -26,6 +26,6 @@ class PoolPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    @record.user == @user
   end
 end
