@@ -5,18 +5,23 @@
   <div class="banner mb-5" style="background-image: url('https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992')"></div>
 <% end %>
 <div class="container">
-  <div class="d-flex justify-content-between">
-    <div>
+  <div class="pool-details">
+    <div class="description">
       <%= link_to "< Back to all pools", root_path %>
-      <span> | </span>
       <% if policy(@pool).edit? %>
+        <span> | </span>
         <%= link_to 'Edit', edit_pool_path(@pool) %>
       <% end %>
-      <h1><%= @pool.name %></h1>
+      <h1 class="mt-4 mb-3"><%= @pool.name %></h1>
+      <ul class="mb-3">
+        <li class="category"><%= @pool.category %> | </li>
+        <li><%= @pool.location %> | </li>
+        <li><i class="fa-solid fa-star"></i> <%= @pool.rating %></i></li>
+      </ul>
       <p><%= @pool.description %></p>
-      <%= button_to "Delete this pool", delete_pool_path(@pool), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
     </div>
     <div class="book-pool">
+    <%# <%= button_to "Delete this pool", delete_pool_path(@pool), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
