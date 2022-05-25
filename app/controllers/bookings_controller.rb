@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to pool_path(@pool)
+      redirect_to pool_path(@pool), notice: "You have succesfully booked this pool. Happy swimming :)"
     else
       render :new, status: :unprocessable_entity
     end
