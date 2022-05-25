@@ -5,11 +5,12 @@ class BookingPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
   def new?
-    @record.user != @user
+    true
   end
 
   def create?
-    @record.user != @user
+    true
   end
 end
