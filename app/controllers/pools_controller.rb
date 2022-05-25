@@ -9,6 +9,7 @@ class PoolsController < ApplicationController
   def show
     @pool = Pool.find(params[:id])
     authorize @pool
+    @booking = Booking.new
   end
 
   def new
