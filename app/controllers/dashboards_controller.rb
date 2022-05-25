@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
-  def index
-    @pools = policy_scope(Pool)
-    @pools = Pool.all
+  def show
+    @pools = current_user.pools
+    authorize @pools
   end
 end
