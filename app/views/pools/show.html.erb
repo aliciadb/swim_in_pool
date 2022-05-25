@@ -19,18 +19,22 @@
         <li><i class="fa-solid fa-star"></i> <%= @pool.rating %></i></li>
       </ul>
       <p><%= @pool.description %></p>
-      <% if policy(@pool).destroy? %>
-      <%= button_to "Delete this pool", delete_pool_path(@pool), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %>
-      <% end %>
     </div>
     <div class="book-pool">
-      <h3>Book this pool</h3>
+      <h5>Book this pool</h5>
 
       <%= simple_form_for [@pool, @booking] do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <p class="price"><%= @pool.price %> €</p>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        </div>
       <% end %>
     </div>
+    <% if policy(@pool).destroy? %>
+      <%= button_to "Delete", delete_pool_path(@pool), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %>
+    <% end %>
   </div>
 </div>
