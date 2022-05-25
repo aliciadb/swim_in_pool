@@ -3,6 +3,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   display: grid;
+  a {
+    color: black !important;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
 }
 
 @media (max-width: 992px) {
