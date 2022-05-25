@@ -3,7 +3,7 @@
     <h1 class="pt-4 pb-3">All pools</h1>
     <%= link_to "+ Add a new pool", new_pool_path, class: 'btn btn-primary' %>
   </div>
-  <div class="cards-container d-flex justify-content-between flex-wrap">
+  <div class="cards-container">
   <% @pools.each do |pool| %>
       <div class="pool-card mb-3">
         <% if pool.photo.attached? %>
@@ -16,11 +16,11 @@
             <p class="category"><%= pool.category %></p>
             <h4><%= link_to pool.name, pool_path(pool) %></h4>
           </div>
-          <div class="details d-flex justify-content-between">
-            <p><%= pool.location %></p>
-            <p><i class="fa-solid fa-star"></i> <%= pool.rating %></i></p>
-            <p class="price"><strong><%= pool.price %> €</strong></p>
-          </div>
+          <ul class="details d-flex justify-content-between">
+            <li><%= pool.location %></li>
+            <li><i class="fa-solid fa-star"></i> <%= pool.rating %></i></li>
+            <li class="price"><strong><%= pool.price %> €</strong></li>
+          </ul>
         </div>
       </div>
     <% end %>
