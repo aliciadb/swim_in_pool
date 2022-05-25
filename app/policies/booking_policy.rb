@@ -6,10 +6,10 @@ class BookingPolicy < ApplicationPolicy
     # end
   end
   def new?
-    true
+    @record.user != @user
   end
 
   def create?
-    true
+    @record.user != @user
   end
 end
