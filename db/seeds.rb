@@ -28,7 +28,7 @@ puts "Creating pools..."
     price: rand(20.0..50.0).round(1),
     location: Faker::Address.street_address,
     category: %w[jacuzzi olympic slides wavepool indoor outdoor natural infinity lap heated salty kids\ friendly].sample,
-    user_id: rand(1..10)
+    user_id: rand(32..42)
   )
   puts "#{pool.name} - #{pool.category} | Price: #{pool.price}"
 end
