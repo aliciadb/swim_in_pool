@@ -5,6 +5,7 @@
   </div>
   <div class="cards-container">
     <% @pools.each do |pool| %>
+      <%= link_to pool_path(pool) do %>
         <div class="pool-card mb-3">
           <% if pool.photo.attached? %>
             <%= cl_image_tag pool.photo.key, height: 300, width: 400, crop: :fill %>
@@ -27,5 +28,6 @@
           </div>
         </div>
       <% end %>
+    <% end %>
   </div>
 </div>
