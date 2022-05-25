@@ -9,7 +9,9 @@
     <div>
       <%= link_to "< Back to all pools", root_path %>
       <span> | </span>
-      <%= link_to 'Edit', edit_pool_path(@pool) %>
+      <% if policy(@pool).edit? %>
+        <%= link_to 'Edit', edit_pool_path(@pool) %>
+      <% end %>
       <h1><%= @pool.name %></h1>
       <p><%= @pool.description %></p>
     </div>
