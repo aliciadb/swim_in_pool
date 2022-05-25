@@ -3,6 +3,8 @@ class Pool < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
   # has_many_attached :photos
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_address?
 
   CATEGORIES = %w[jacuzzi olympic slides wavepool indoor outdoor natural infinity lap heated salty kids\ friendly]
 
