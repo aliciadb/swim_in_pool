@@ -27,7 +27,6 @@ puts "Creating pools..."
     description: Faker::Restaurant.description,
     price: rand(20.0..50.0).round(1),
     location: Faker::Address.street_address,
-    image: "https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992",
     category: %w[jacuzzi olympic slides wavepool indoor outdoor natural infinity lap heated salty kids\ friendly].sample,
     user_id: rand(1..10)
   )
