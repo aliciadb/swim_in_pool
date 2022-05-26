@@ -1,6 +1,7 @@
 .pool-card {
   border-radius: 20px;
   background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
 
   img {
     border-top-right-radius: 20px;
@@ -32,4 +33,10 @@
       font-size: 18px;
     }
   }
+}
+
+.booking-card {
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
 }
