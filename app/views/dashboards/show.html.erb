@@ -4,10 +4,17 @@
     <h3 class="pt-4 pb-3">My upcoming bookings</h3>
     <div class="booking-grid">
     <% @bookings.each do |booking| %>
-      <div class="booking-card mb-3 p-4">
-        <h4><%= booking.pool.name %></h4>
-        <p><i class="fa-regular fa-calendar-days"></i> <%= booking.start_date %> --> <%= booking.end_date %></p>
-        <p><i class="fa-solid fa-location-dot"></i> <%= booking.pool.location %></p>
+      <div class="pool-card mb-3">
+        <% if booking.pool.photo.attached? %>
+          <%= cl_image_tag pool.photo.key, width: 500, crop: :fill %>
+        <% else %>
+          <img src="https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992" alt="Pool photo" height=200>
+        <% end %>
+        <div class="p-4">
+          <h4><%= booking.pool.name %></h4>
+          <p><i class="fa-regular fa-calendar-days"></i> <%= booking.start_date %> --> <%= booking.end_date %></p>
+          <p><i class="fa-solid fa-location-dot"></i> <%= booking.pool.location %></p>
+        </div>
       </div>
     <% end %>
     </div>
