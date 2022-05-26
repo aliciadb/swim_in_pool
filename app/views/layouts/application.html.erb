@@ -13,11 +13,24 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <%= render "shared/footer" %>
+    <% if current_page?(controller: "pages", action: "home") %>
+      <%= render "shared/navbar" %>
+      <%= yield %>
+    <% else %>
+      <div class="page-container">
+        <div class="navbar-container">
+          <%= render "shared/navbar" %>
+        </div>
+        <div class="content-container">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <%= render "shared/flashes" %>
+          <%= yield %>
+        </div>
+        <div class="footer-container">
+          <%= render "shared/footer" %>
+        </div>
+      </div>
+    <% end %>
   </body>
 </html>
