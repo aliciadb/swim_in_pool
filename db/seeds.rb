@@ -19,9 +19,9 @@ User.delete_all
     password: "123456"
   )
 end
-LOCATIONS = ["Barcelona, Spain", "Berlin, Germany", "Brussels, Belgium"]
+LOCATIONS = ["Barcelona, Spain", "Berlin, Germany", "Brussels, Belgium", "Mykonos, Greece", "Faro, Portugal"]
 puts "Creating pools..."
-10.times do
+15.times do
   pool = Pool.create(
     name: Faker::TvShows::TwinPeaks.location,
     rating: rand(1.0..5.0).round(1),
