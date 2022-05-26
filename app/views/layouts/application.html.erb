@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <% if current_page?(controller: "pages", action: "home") %>
+    <% if request.path == '/' %>
       <%= render "shared/navbar" %>
       <%= yield %>
     <% else %>
