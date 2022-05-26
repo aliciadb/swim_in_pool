@@ -38,7 +38,7 @@
     <% end %>
 
     <% if policy(@pool).destroy? %>
-      <%= button_to "Delete", delete_pool_path(@pool), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %>
+      <%= link_to "Delete", delete_pool_path(@pool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-secondary btn-custom-delete' %>
     <% end %>
   </div>
 </div>
