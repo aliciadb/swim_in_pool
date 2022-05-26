@@ -19,7 +19,9 @@ User.delete_all
     password: "123456"
   )
 end
-LOCATIONS = ["Barcelona, Spain", "Berlin, Germany", "Brussels, Belgium", "Mykonos, Greece", "Faro, Portugal"]
+LOCATIONS = ["Lugar Barrio, 4, 36598, Pontevedra, Spain", "Marienstrasse, 9 10117 Berlin, Germany", "Avenue de Tervuren,
+             100 Brussels, Belgium", "Agrari, Mikonos 846 00, Greece",
+             "Rua Fonte do Castilho 1215 -Lugar da Igreja 376, Castanheira do Vouga, Portugal"]
 puts "Creating pools..."
 15.times do
   pool = Pool.create(
