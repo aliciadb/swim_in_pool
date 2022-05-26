@@ -21,9 +21,9 @@ User.delete_all
 end
 LOCATIONS = ["Plaça Francesc Macià, 2, 08930, Barcelona, Spain", "Marienstrasse, 9 10117 Berlin, Germany", "Avenue de Tervuren,
              100 Brussels, Belgium", "Agrari, Mikonos 846 00, Greece",
-             "Rua Fonte do Castilho 1215 -Lugar da Igreja 376, Castanheira do Vouga, Portugal"]
+             "Av. Poente 13, 8005-520 Faro, Portugal", "Bias do Sul, 8700, Moncarapacho, Portugal"]
 puts "Creating pools..."
-20.times do
+40.times do
   pool = Pool.create(
     name: Faker::TvShows::TwinPeaks.location,
     rating: rand(1.0..5.0).round(1),
