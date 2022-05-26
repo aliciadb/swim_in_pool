@@ -1,4 +1,8 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% if request.path == '/' %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-home">
+<% else %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% end %>
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <h5>SWIM IN POOL</h5>
