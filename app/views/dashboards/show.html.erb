@@ -1,6 +1,20 @@
 <div class="container">
+  <h1 class="pt-4 pb-3">Dashboard</h1>
+  <div class="booking-container">
+    <h3 class="pt-4 pb-3">My upcoming bookings</h3>
+    <div class="booking-grid">
+    <% @bookings.each do |booking| %>
+      <div class="booking-card mb-3 p-4">
+        <h4><%= booking.pool.name %></h4>
+        <p><i class="fa-regular fa-calendar-days"></i> <%= booking.start_date %> --> <%= booking.end_date %></p>
+        <p><i class="fa-solid fa-location-dot"></i> <%= booking.pool.location %></p>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  <hr class="my-5">
   <div class="d-flex justify-content-between align-items-center">
-    <h1 class="pt-4 pb-3">My pools</h1>
+    <h3 class="pt-4 pb-3">My pools</h3>
     <%= link_to "+ Add a new pool", new_pool_path, class: 'btn btn-primary' %>
   </div>
   <div class="cards-container">
@@ -30,4 +44,5 @@
       <% end %>
     <% end %>
   </div>
+
 </div>
