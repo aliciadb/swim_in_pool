@@ -1,10 +1,10 @@
-<div class="container">
-  <div class="d-flex justify-content-between align-items-center">
-    <h1 class="pt-4 pb-3">Discover all pools</h1>
-    <%= link_to "+ Add a new pool", new_pool_path, class: 'btn btn-primary' %>
-  </div>
-  <div class="d-flex">
-    <div class="cards-container flex-grow-2">
+<div class="d-flex justify-content-between">
+  <div class="search-results px-5">
+    <div class="d-flex justify-content-between align-items-center mt-5 pb-3">
+      <h1>Discover all pools</h1>
+      <%= link_to "+ Add a new pool", new_pool_path, class: 'btn btn-primary' %>
+    </div>
+    <div class="cards-container">
       <% @pools.each do |pool| %>
         <%= link_to pool_path(pool) do %>
           <div class="pool-card mb-3">
@@ -16,10 +16,10 @@
             <div class="p-4">
               <div>
                 <p class="category"><%= pool.category %></p>
-                <h4><%= pool.name %></h4>
+                <h4 class="truncate"><%= pool.name %></h4>
               </div>
                 <ul class="details d-flex justify-content-between">
-                  <li><%= pool.location %></li>
+                  <li class="truncate"><%= pool.location %></li>
                   <li><i class="fa-solid fa-star"></i> <%= pool.rating %></i></li>
                   <li class="price"><strong><%= pool.price %> €</strong></li>
                 </ul>
@@ -28,10 +28,10 @@
         <% end %>
       <% end %>
     </div>
-    <div class="flex-grow-0" id="map-container" style="width: 50%; height: 100vh;"
+  </div>
+  <div class="flex-grow-0" id="map-container" style="width: 40vw; height: 100vh;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
 </div>
