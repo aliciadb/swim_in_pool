@@ -28,7 +28,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="flex-grow-0" style="width: 50%; height: 100vh;"
+    <div class="flex-grow-0" id="map-container" style="width: 50%; height: 100vh;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
