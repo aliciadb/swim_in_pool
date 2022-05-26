@@ -3,7 +3,12 @@ class PoolsController < ApplicationController
 
   def index
     @pools = policy_scope(Pool)
-    @pools = Pool.all
+    if params[:query].present?
+      sql_query = "location ILIKE :query OR category ILIKE :query"
+      @pools = Pool.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @pools = Pool.all
+    end
   end
 
   def show
