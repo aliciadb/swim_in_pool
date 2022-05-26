@@ -26,8 +26,8 @@
   </div>
   <div class="cards-container">
     <% @pools.each do |pool| %>
-      <%= link_to pool_path(pool) do %>
-        <div class="pool-card mb-3">
+      <div class="pool-card mb-3">
+        <%= link_to pool_path(pool) do %>
           <% if pool.photo.attached? %>
             <%= cl_image_tag pool.photo.key, width: 500, crop: :fill %>
           <% else %>
@@ -47,8 +47,8 @@
               <li class="price"><strong><%= pool.price %> €</strong></li>
             </ul>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
