@@ -16,7 +16,7 @@
       margin-bottom: 12px;
     }
     li, i {
-      color: #a9a9a9;
+      color: $gray;
       font-size: 0.875em;
       text-align: right;
       margin-left: 10px;
@@ -28,7 +28,7 @@
       margin-left: 0;
     }
     .price {
-      color: black;
+      color: $dark-gray;
       font-size: 18px;
     }
   }
