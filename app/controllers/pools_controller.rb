@@ -3,8 +3,10 @@ class PoolsController < ApplicationController
 
   def index
     @pools = policy_scope(Pool)
-    if params[:query].present?
-      sql_query = "location ILIKE :query OR category ILIKE :query"
+    sql_query = "location ILIKE :query OR category ILIKE :query"
+    if Pool.where(sql_query, query: "%#{params[:query]}%").empty?
+      redirect_to root_path, notice: "There are no pools matching your search, please start again!"
+    elsif params[:query].present?
       @pools = Pool.where(sql_query, query: "%#{params[:query]}%")
     else
       @pools = Pool.all

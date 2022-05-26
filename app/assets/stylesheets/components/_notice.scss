@@ -4,3 +4,17 @@
   color: white;
   font-size: 14px;
 }
+
+.notice-home {
+  font-size: 20px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 50%);
+  width: max-content;
+  background: none;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+  color: #b61920;
+  font-weight: bold;
+}
