@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :pools, except: [:destroy] do
     resources :bookings, only: [:new, :create]
   end
+  resources :bookings, only: :destroy
+  # resources :dashboards, only: :show
   get "dashboards", to: "dashboards#show"
   # root "articles#index"
 end
