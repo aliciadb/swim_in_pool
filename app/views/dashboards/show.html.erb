@@ -3,7 +3,7 @@
   <div class="booking-container">
     <h3 class="pt-4 pb-3">My upcoming bookings</h3>
     <div class="booking-grid">
-    <% @bookings.each do |booking| %>
+    <% @bookings.reverse.each do |booking| %>
       <div class="pool-card mb-3">
         <% if booking.pool.photo.attached? %>
           <%= cl_image_tag booking.pool.photo.key, width: 500, crop: :fill %>
