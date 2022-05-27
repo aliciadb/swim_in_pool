@@ -15,6 +15,7 @@
     grid-column: 3 / span 1;
     border-radius: 20px;
     padding: 30px;
+    align-self: start;
 
     .price {
       font-family: $headers-font;
