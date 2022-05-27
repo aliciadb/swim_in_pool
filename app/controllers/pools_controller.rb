@@ -56,9 +56,9 @@ class PoolsController < ApplicationController
 
   def destroy
     @pool = Pool.find(params[:id])
-    @pool.delete
+    @pool.destroy
     authorize @pool
-    redirect_to root_path, status: :see_other
+    redirect_to dashboards_path, status: :see_other
   end
 
   private
