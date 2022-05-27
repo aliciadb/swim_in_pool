@@ -4,6 +4,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.04);
   position: relative;
 
+  a {
+    color: $dark-gray !important;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+
   img {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -21,8 +28,11 @@
       color: $gray;
       font-size: 0.875em;
       text-align: right;
-      margin-left: 10px;
       margin-bottom: 0;
+    }
+    .rating {
+      margin-right: 10px;
+      margin-left: 10px;
     }
     li:first-of-type {
       flex-grow: 2;
