@@ -5,7 +5,7 @@
       <%= link_to "+ Add a new pool", new_pool_path, class: 'btn btn-primary' %>
     </div>
     <div class="cards-container">
-      <% @pools.each do |pool| %>
+      <% @pools.reverse.each do |pool| %>
         <%= link_to pool_path(pool) do %>
           <div class="pool-card mb-3">
             <% if pool.photo.attached? %>
