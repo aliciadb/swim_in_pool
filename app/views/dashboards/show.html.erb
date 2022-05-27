@@ -1,7 +1,7 @@
 <div class="container">
-  <h1 class="pt-4 pb-3">Dashboard</h1>
+  <h1 class="pt-5 pb-2">Dashboard</h1>
   <div class="booking-container">
-    <h3 class="pt-4 pb-3">My upcoming bookings</h3>
+    <h4 class="pt-4 pb-2">My upcoming bookings</h4>
     <div class="booking-grid">
     <% @bookings.reverse.each do |booking| %>
       <div class="pool-card mb-3">
@@ -12,8 +12,10 @@
         <% end %>
         <div class="p-4">
           <h4><%= booking.pool.name %></h4>
-          <p><i class="fa-regular fa-calendar-days"></i> <%= booking.start_date %> --> <%= booking.end_date %></p>
-          <p><i class="fa-solid fa-location-dot"></i> <%= booking.pool.location %></p>
+          <p><i class="fa-regular fa-calendar-days"></i> <%= booking.start_date %> <i class="fa-solid fa-arrow-right-long"></i> <%= booking.end_date %></p>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i> <%= booking.pool.location %></li>
+          </ul>
         </div>
         <%= link_to "x", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-outline-dark btn-sm delete' %>
       </div>
@@ -22,9 +24,9 @@
   </div>
   <hr class="my-5">
   <div class="d-flex justify-content-between align-items-center">
-    <h3 class="pt-4 pb-3">My pools</h3>
+    <h4 class="pt-4 pb-2">My pools</h4>
   </div>
-  <div class="cards-container">
+  <div class="booking-grid">
     <% @pools.each do |pool| %>
       <div class="pool-card mb-3">
         <%= link_to pool_path(pool) do %>
@@ -38,12 +40,12 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div>
                   <p class="category"><%= pool.category %></p>
-                  <h4><%= pool.name %></h4>
+                  <h4 class="truncate"><%= pool.name %></h4>
                 </div>
               </div>
               <ul class="details d-flex justify-content-between">
-                <li><%= pool.location %></li>
-                <li><i class="fa-solid fa-star"></i> <%= pool.rating %></i></li>
+                <li class="truncate"><%= pool.location %></li>
+                <li class="rating"><i class="fa-solid fa-star"></i> <%= pool.rating %></i></li>
                 <li class="price"><strong><%= pool.price %> €</strong></li>
               </ul>
             </div>

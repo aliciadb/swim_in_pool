@@ -1,0 +1,24 @@
+.login, .new-pool {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.new-pool {
+  margin: 60px auto;
+  width: 600px;
+}
+
+.login-bg, .new-pool-bg {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.new-pool-bg {
+  height: auto;
+  margin-top: 0;
+}
