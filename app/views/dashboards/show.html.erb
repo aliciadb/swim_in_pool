@@ -28,26 +28,31 @@
     <% @pools.each do |pool| %>
       <div class="pool-card mb-3">
         <%= link_to pool_path(pool) do %>
-          <% if pool.photo.attached? %>
-            <%= cl_image_tag pool.photo.key, width: 500, crop: :fill %>
-          <% else %>
-            <img src="https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992" alt="Pool photo" height=200>
-          <% end %>
-          <div class="p-4">
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <p class="category"><%= pool.category %></p>
-                <h4><%= pool.name %></h4>
+          <div>
+            <% if pool.photo.attached? %>
+              <%= cl_image_tag pool.photo.key, width: 500, crop: :fill %>
+            <% else %>
+              <img src="https://images.unsplash.com/photo-1536745511564-a5fa6e596e7b?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=992" alt="Pool photo" height=200>
+            <% end %>
+            <div class="p-4">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="category"><%= pool.category %></p>
+                  <h4><%= pool.name %></h4>
+                </div>
               </div>
-              <%= link_to "x", delete_pool_path(pool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-outline-dark btn-sm' %>
+              <ul class="details d-flex justify-content-between">
+                <li><%= pool.location %></li>
+                <li><i class="fa-solid fa-star"></i> <%= pool.rating %></i></li>
+                <li class="price"><strong><%= pool.price %> €</strong></li>
+              </ul>
             </div>
-            <ul class="details d-flex justify-content-between">
-              <li><%= pool.location %></li>
-              <li><i class="fa-solid fa-star"></i> <%= pool.rating %></i></li>
-              <li class="price"><strong><%= pool.price %> €</strong></li>
-            </ul>
           </div>
         <% end %>
+<<<<<<< HEAD
+        <%= link_to "x", delete_pool_path(pool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-outline-dark btn-sm delete' %>
+=======
+>>>>>>> master
       </div>
     <% end %>
   </div>
