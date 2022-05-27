@@ -5,7 +5,7 @@ class PoolsController < ApplicationController
     @pools = policy_scope(Pool)
     sql_query = "location ILIKE :query OR category ILIKE :query"
     if Pool.where(sql_query, query: "%#{params[:query]}%").empty?
-      redirect_to root_path, notice: "There are no pools matching your search, please start again!"
+      redirect_to root_path, search_notice: "There are no pools matching your search, please start again!"
     elsif params[:query].present?
       @pools = Pool.where(sql_query, query: "%#{params[:query]}%")
     else

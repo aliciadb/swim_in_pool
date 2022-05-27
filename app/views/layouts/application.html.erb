@@ -14,9 +14,10 @@
 
   <body>
     <% if request.path == '/' %>
+      <p class="notice home-notice"><%= notice %></p>
+      <p class="notice search-notice-home"><%= search_notice %></p>
       <%= render "shared/navbar" %>
       <div class="content-container">
-        <p class="notice"><%= notice %></p>
         <%= yield %>
       </div>
     <% else %>
