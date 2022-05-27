@@ -7,5 +7,8 @@ import { application } from "./application"
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
+import PriceCalculatorController from "./price_calculator_controller.js"
+application.register("price-calculator", PriceCalculatorController)
+
 import MapController from "./map_controller.js"
 application.register("map", MapController)
