@@ -15,6 +15,7 @@
           <p><i class="fa-regular fa-calendar-days"></i> <%= booking.start_date %> --> <%= booking.end_date %></p>
           <p><i class="fa-solid fa-location-dot"></i> <%= booking.pool.location %></p>
         </div>
+        <%= link_to "x", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-outline-dark btn-sm delete' %>
       </div>
     <% end %>
     </div>
