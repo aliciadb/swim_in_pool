@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .cards-container {
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 20px;
   display: grid;
   a {
@@ -9,6 +9,15 @@
   a:hover {
     opacity: 0.8;
   }
+}
+
+.search-results {
+  width: 60vw;
+}
+
+#map-container{
+  position: sticky;
+  top: 0;
 }
 
 @media (max-width: 992px) {

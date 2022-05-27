@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Create pools database"
+Booking.delete_all
 Pool.delete_all
 User.delete_all
 
@@ -18,17 +19,19 @@ User.delete_all
     password: "123456"
   )
 end
-
+LOCATIONS = ["Plaça Francesc Macià, 2, 08930, Barcelona, Spain", "Marienstrasse, 9 10117 Berlin, Germany", "Avenue de Tervuren,
+             100 Brussels, Belgium", "Agrari, Mikonos 846 00, Greece",
+             "Av. Poente 13, 8005-520 Faro, Portugal", "Bias do Sul, 8700, Moncarapacho, Portugal"]
 puts "Creating pools..."
-100.times do
+40.times do
   pool = Pool.create(
     name: Faker::TvShows::TwinPeaks.location,
     rating: rand(1.0..5.0).round(1),
     description: Faker::Restaurant.description,
     price: rand(20.0..50.0).round(1),
-    location: Faker::Address.street_address,
+    location: LOCATIONS.sample,
     category: %w[jacuzzi olympic slides wavepool indoor outdoor natural infinity lap heated salty kids\ friendly].sample,
-    user_id: rand(32..42)
+    user: User.all.sample
   )
   puts "#{pool.name} - #{pool.category} | Price: #{pool.price}"
 end
