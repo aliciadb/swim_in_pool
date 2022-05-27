@@ -58,7 +58,7 @@ class PoolsController < ApplicationController
     @pool = Pool.find(params[:id])
     @pool.destroy
     authorize @pool
-    redirect_to root_path, status: :see_other
+    redirect_to dashboards_path, status: :see_other
   end
 
   private

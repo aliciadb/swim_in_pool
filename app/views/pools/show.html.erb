@@ -6,7 +6,7 @@
 <div class="container">
   <div class="pool-details">
     <div class="description">
-      <%= link_to "< Back to all pools", root_path %>
+      <%= link_to "< Back to all pools", pools_path %>
       <% if policy(@pool).edit? %>
         <span> | </span>
         <%= link_to 'Edit', edit_pool_path(@pool) %>
