@@ -10,6 +10,10 @@
       <% if policy(@pool).edit? %>
         <span> | </span>
         <%= link_to 'Edit', edit_pool_path(@pool) %>
+        <span> | </span>
+        <% if policy(@pool).destroy? %>
+          <%= link_to "Delete", delete_pool_path(@pool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
       <% end %>
       <h1 class="mt-4 mb-3"><%= @pool.name %></h1>
       <ul class="mb-3">
@@ -35,10 +39,6 @@
           </div>
         <% end %>
       </div>
-    <% end %>
-
-    <% if policy(@pool).destroy? %>
-      <%= link_to "Delete", delete_pool_path(@pool), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-secondary btn-custom-delete' %>
     <% end %>
   </div>
 </div>
